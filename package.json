@@ -1,0 +1,30 @@
+{
+  "name": "bar-rat-ton",
+  "version": "1.0.0",
+  "description": "Bar-rat-ton",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SwordOfNayru/GdP-Bar-rat-Ton.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SwordOfNayru/GdP-Bar-rat-Ton/issues"
+  },
+  "homepage": "https://github.com/SwordOfNayru/GdP-Bar-rat-Ton#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "sequelize": "^6.12.0-beta.3",
+    "uuid": "^8.3.2",
+    "vue": "^3.2.26"
+  },
+  "devDependencies": {
+    "@vue/compiler-sfc": "^3.2.26"
+  }
+}
