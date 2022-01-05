@@ -5,7 +5,7 @@ export default {
         type: DataTypes.UUID,
         default: DataTypes.UUIDV4,
         primaryKey: true,
-    }
+    },
     nom: DataTypes.STRING,
     addresse: DataTypes.STRING,
 }
