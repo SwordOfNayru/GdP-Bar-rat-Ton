@@ -41,7 +41,13 @@ app.use(function (req, res, next) {
 // /* qui sont l'accès aux pages
 
 
+app.get("/", (req, res) => {
+    res.send('Hello World!')
+})
+
+app.use('/exemple', require('./controller/home/exempleRoute.js'));
+
 //Démarrage du serveur web
 app.listen(process.env.WEB_PORT | 8080, () => {
-
+    console.log(`Listen at ${process.env.WEB_PORT | 8080}`)
 });
