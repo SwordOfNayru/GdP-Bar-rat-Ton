@@ -1,21 +1,21 @@
 <template>
 <div>
   <img alt="Vue logo" src="./assets/logo.png">
-  
-  
-  <HelloWorld/>
+
+  <i class="fas fa-search"></i>
+
+  <barre-recherche />
 </div>
 
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import BarreRecherche from './components/BarreRecherche.vue'
+require("@fortawesome/fontawesome-free");
 export default {
   name: 'App',
   components: {
     BarreRecherche,
-    HelloWorld
   }
 }
 </script>
