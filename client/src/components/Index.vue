@@ -10,7 +10,7 @@
                 <div class="grid grid-cols-6 grid-rows-2">
                     <!-- Logo + texte --> 
                     <div class="col-start-2 col-span-5 flex justify-first">
-                        <img class="w-22 h-22 " src="../assets/Logo.png"> 
+                        <img class="w-22 h-22 " src="../assets/logo.png"> 
                         <p class="font-mono text-4xl place-items-center pt-32">
                             Bar-rat-ton
                         </p>
@@ -27,23 +27,23 @@
             <div class="row-start-2">
                 <!-- Case x3 presentation avec texte -->
                 <div class="flex justify-around">
-                    <div class="bg-white w-80 border-1 shadow-2xl " >
-                        <img src="../assets/Image_1_Home.png">
-                        <p class="font-mono text-center text-xs">
+                    <div class="bg-white w-80 border-1 shadow-2xl rounded-lg" >
+                        <img src="../assets/Image_1_Home.png" class="mb-1">
+                        <p class="font-mono text-center text-xs p-2">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nunc arcu, venenatis eu sem eu, finibus tempus risus. Pellentesque at dui est. Aenean eu nunc rutrum, interdum dolor ut, fringilla ante. Sed cursus consequat urna, quis malesuada urna suscipit at.
                         </p>
                     </div>
 
-                    <div class="bg-white w-80 border-1 shadow-2xl" >
-                        <img src="../assets/Image_2_Home.png">
-                        <p class="font-mono text-center text-xs">
+                    <div class="bg-white w-80 border-1 shadow-2xl rounded-lg" >
+                        <img src="../assets/Image_2_Home.png" class="mb-1">
+                        <p class="font-mono text-center text-xs p-2">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nunc arcu, venenatis eu sem eu, finibus tempus risus. Pellentesque at dui est. Aenean eu nunc rutrum, interdum dolor ut, fringilla ante. Sed cursus consequat urna, quis malesuada urna suscipit at.
                         </p>
                     </div>
 
-                    <div class="bg-white w-80 border-1 shadow-2xl">
-                        <img src="../assets/Image_3_Home.png">
-                        <p class="font-mono text-center text-xs">
+                    <div class="bg-white w-80 border-1 shadow-2xl rounded-lg">
+                        <img src="../assets/Image_3_Home.png" class="mb-1">
+                        <p class="font-mono text-center text-xs p-2">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nunc arcu, venenatis eu sem eu, finibus tempus risus. Pellentesque at dui est. Aenean eu nunc rutrum, interdum dolor ut, fringilla ante. Sed cursus consequat urna, quis malesuada urna suscipit at.
                         </p>
                     </div>
