@@ -24,7 +24,7 @@ module.exports = (sequelize) => {
             allowNull: false,
             type: DataTypes.DECIMAL
         },
-        coordS: {
+        coordE: {
             allowNull: false,
             type: DataTypes.DECIMAL
         },
