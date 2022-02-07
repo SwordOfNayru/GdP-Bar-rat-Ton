@@ -3,8 +3,8 @@ function applyExtraSetup(sequelize) {
 
     boisson.type_boisson = boisson.belongsTo(type_boisson);
 
-    boisson.belongsToMany(bar, { through: servis });
-    bar.belongsToMany(boisson, { through: servis });
+    boisson.belongsToMany(bar, { through: { model: servis, unique: false } });
+    bar.belongsToMany(boisson, { through: { model: servis, unique: false } });
 }
 
 module.exports = { applyExtraSetup };

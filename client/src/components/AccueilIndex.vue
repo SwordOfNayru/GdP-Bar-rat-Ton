@@ -14,7 +14,6 @@
                 <div class="grid grid-cols-6 grid-rows-2">
                     <!-- Logo + texte -->
                     <div class="col-start-2 col-span-5 flex justify-first">
-                        <barre-recherche @search="OnSearch"> </barre-recherche>
                         <p class="font-mono text-4xl place-items-center pt-32">
                             Bar-rat-ton
                         </p>
@@ -22,7 +21,7 @@
 
                     <!-- Placer la barre de recherche -->
                     <div class="row-start-2 col-start-2 col-span-5 pt-10">
-                        <img src="../assets/SearchBar_component.png" />
+                        <barre-recherche @search="OnSearch"> </barre-recherche>
                     </div>
                 </div>
             </div>
@@ -94,7 +93,3 @@ export default {
     },
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only, CSS -->
-<style>
-</style>

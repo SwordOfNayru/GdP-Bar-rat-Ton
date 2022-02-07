@@ -1,29 +1,31 @@
 <template>
-    <div form="relative" class="animate-pulse" ref="racine">
-        <vue-select :options="allTypeBoisson"></vue-select>
+    <div form="relative" class="flex flex-row" ref="racine">
+        <vue-select
+            placeholder="Boisson ..."
+            :custom-label="selectDisplay"
+            :options="allTypeBoisson"
+            v-if="dataReady"
+        ></vue-select>
         <input
             type="number"
-            class="
-                h-14
-                w-96
-                pr-8
-                pl-5
-                border
-                z-0
-                focus:shadow focus:outline-none
-            "
+            class="w-96 pr-8 pl-5 border focus:shadow focus:outline-none"
             placeholder="Budget.."
         />
-        <button class="border rounded-r-lg bg-[#FCD34D]" @click="OnSearch">
+        <button
+            class="border rounded-r-lg bg-[#FCD34D]"
+            style="width: 54px"
+            @click="OnSearch"
+        >
             <i class="fas fa-search"></i>
         </button>
     </div>
 </template>
 
 <script>
-import vSelect from "vue-select";
+import vSelect from "vue-multiselect";
 import axios from "axios";
 import GetBaseApiUrl from "../library/GetBaseApiUrl";
+//import "../../node_modules/vue-select/dist/vue-select.css";
 
 export default {
     components: {
@@ -32,7 +34,7 @@ export default {
     data() {
         return {
             budget: null,
-            typeBoisson: null,
+            typeBoisson: {},
             dataReady: false,
             allTypeBoisson: [],
         };
@@ -45,10 +47,16 @@ export default {
                 typeBoisson: this.typeBoisson,
             });
         },
+        selectDisplay({ label }) {
+            return label;
+        },
     },
     mounted() {
+        let baseURL = GetBaseApiUrl();
+        console.log(baseURL);
+
         axios
-            .get("/type_boisson", { baseURL: GetBaseApiUrl() })
+            .get("/boissons/type_boissons", { baseURL: baseURL })
             .then((response) => {
                 if (response) {
                     for (var tb of response.data) {
@@ -58,11 +66,12 @@ export default {
                         });
                     }
 
+                    console.log(this.allTypeBoisson);
                     this.dataReady = true;
                     this.$refs.racine.classList.remove("animate-pulse");
                 }
             })
-            .error((e) => {
+            .catch((e) => {
                 console.error(e);
             });
     },

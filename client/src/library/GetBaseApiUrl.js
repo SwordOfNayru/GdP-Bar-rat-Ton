@@ -1,5 +1,6 @@
 module.exports = () => {
-    let base = document.location.origin;
+    let base = document.location.host;
+    base = base.split(":")[0];
     let port = 443;
-    return `${base}:${port}/api`;
+    return `http://${base}:${port}/api`;
 };
