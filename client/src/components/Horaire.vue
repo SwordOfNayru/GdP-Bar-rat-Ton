@@ -1,62 +1,34 @@
 <template>
-            <div class="horaire">
-                <table> 
-                    <tr>
-                        <td> Horaires </td>
-                    <div v-for="value in Horaire" :key="value">
-                        <td><b>{{ value.day }}</b></td>
-                        <td>{{ value.matin }}
-                        {{ value.soir }}</td>
-                    </div>
-                    </tr>
-                </table>
-           </div>
-       
-    
+    <div class="horaire">
+        <table>
+            <tr v-for="value in cleanH" :key="value">
+                <td>
+                    <b>{{ value.day }}</b>
+                </td>
+                <td class="pl-1">{{ value.matin }} {{ value.soir }}</td>
+            </tr>
+        </table>
+    </div>
 </template>
 <script>
 export default {
-    el: '#Horaire',
+    el: "#Horaire",
     props: {
-        msg:String
+        Horaire: {
+            type: Object,
+            require: true,
+        },
     },
-    data(){
-        return{
-            Horaire: {   
-                        lundi :{
-                            "day": "lundi",
-                            "matin":"11h-12h",
-                            "soir":"18h-2h",
-                        },
-                          mardi :{
-                            "day": "mardi",
-                            "matin":"11h-12h",
-                            "soir":"18h-2h",
-                        },
-                          mercredi :{
-                            "day": "mercredi",
-                            "matin":"11h-12h",
-                            "soir":"18h-2h",
-                        },
-                          jeudi :{
-                            "day": "jeudi",
-                            "matin":"11h-12h",
-                            "soir":"18h-2h",
-                        },
-                          vendredi :{
-                            "day": "vendredi",
-                            "matin":"11h-12h",
-                            "soir":"18h-2h",
-                        },
+    data() {},
+    computed: {
+        cleanH() {
+            if (typeof this.Horaire == "string") {
+                return JSON.parse(this.Horaire);
+            } else {
+                return this.Horaire;
             }
-        }
-    }
-}
+        },
+    },
+};
 </script>
-<style scoped>
 
-#horaire{
-    margin-right: 50%;
-    
-}
-</style>

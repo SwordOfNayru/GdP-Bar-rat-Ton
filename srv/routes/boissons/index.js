@@ -29,10 +29,9 @@ router.get("/:id", async (req, res, next) => {
     }
 });
 
-router.get("/type_boisson", async (req, res) => {
+router.get("/type_boissons", async (req, res) => {
     const typeBoisson = sequelize.model("type_boisson");
-
-    const all = typeBoisson.findAll();
+    const all = await typeBoisson.findAll();
 
     res.json(all);
 });
