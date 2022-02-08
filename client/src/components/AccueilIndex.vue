@@ -1,70 +1,63 @@
-<!-- html -->
 <template>
-    <!-- Insertion fond écran-->
-    <div
-        class="bg-local"
-        style="
-            background-image: url(https://images0.persgroep.net/rcs/S-I8OJXD85BBSRBi-L66YTNe34w/diocontent/177043474/_fitwidth/694/?appId=21791a8992982cd8da851550a453bd7f&quality=0.8);
-        "
-    >
-        <!-- création de la grille 1/2 écran-->
-        <div class="grid grid-rows-2">
-            <!-- Utilisation de la première moitié de la grille 1/2 écran-->
-            <div class="row-start-1">
-                <div class="grid grid-cols-6 grid-rows-2">
-                    <!-- Logo + texte -->
-                    <div class="col-start-2 col-span-5 flex justify-first">
+    <div class="w-full h-screen">
+        <div class="grid grid-rows-5">
+            <div class="">
+                <div class="grid grid-cols-7">
+                    <div class="col-start-2 col-span-6 flex justify-first">
+                        <img src="../assets/logo.png" />
                         <p class="font-mono text-4xl place-items-center pt-32">
                             Bar-rat-ton
                         </p>
                     </div>
-
-                    <!-- Placer la barre de recherche -->
-                    <div class="row-start-2 col-start-2 col-span-5 pt-10">
-                        <barre-recherche @search="OnSearch"> </barre-recherche>
-                    </div>
                 </div>
             </div>
+            <div class="row-span-3 background-carte flex w-full justify-center">
+                <barre-recherche @search="OnSearch" class="h-12 mt-24">
+                </barre-recherche>
+            </div>
+            <div></div>
+        </div>
 
-            <!-- Utilisation de la seconde moitié de la grille 1/2 écran-->
-            <div class="row-start-2">
-                <!-- Case x3 presentation avec texte -->
-                <div class="flex justify-around">
-                    <div class="bg-white w-80 border-1 shadow-2xl rounded-lg">
-                        <img src="../assets/Image_1_Home.png" class="mb-1" />
-                        <p class="font-mono text-center text-xs p-2">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Phasellus nunc arcu, venenatis eu sem eu,
-                            finibus tempus risus. Pellentesque at dui est.
-                            Aenean eu nunc rutrum, interdum dolor ut, fringilla
-                            ante. Sed cursus consequat urna, quis malesuada urna
-                            suscipit at.
-                        </p>
-                    </div>
+        <div class="w-full z-2 bottom-175 left-0 absolute">
+            <div class="flex justify-around">
+                <div class="bg-white w-80 border-1 shadow-2xl rounded-lg">
+                    <img
+                        src="../assets/Image_1_Home.png"
+                        class="mb-1 rounded-lg"
+                    />
+                    <p class="font-mono text-center text-xs p-2 m-2">
+                        Bar-rat-thon est l’application idéal pour garder un
+                        contrôle sur votre budget soirée, en quelques clics
+                        retrouvé vous à l’endroit le plus adapté à votre budget
+                        et vos envies pour pouvoir ainsi profiter le plus de ce
+                        moment.
+                    </p>
+                </div>
 
-                    <div class="bg-white w-80 border-1 shadow-2xl rounded-lg">
-                        <img src="../assets/Image_2_Home.png" class="mb-1" />
-                        <p class="font-mono text-center text-xs p-2">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Phasellus nunc arcu, venenatis eu sem eu,
-                            finibus tempus risus. Pellentesque at dui est.
-                            Aenean eu nunc rutrum, interdum dolor ut, fringilla
-                            ante. Sed cursus consequat urna, quis malesuada urna
-                            suscipit at.
-                        </p>
-                    </div>
+                <div class="bg-white w-80 border-1 shadow-2xl rounded-lg">
+                    <img
+                        src="../assets/Image_2_Home.png"
+                        class="mb-1 rounded-lg"
+                    />
+                    <p class="font-mono text-center text-xs p-2 m-2">
+                        Bar-rat-thon est avant tout un moment de joie et de
+                        partage, profiter des moments présent avec votre
+                        entourage actuel et futur sans se soucier d’autres
+                        chose.
+                    </p>
+                </div>
 
-                    <div class="bg-white w-80 border-1 shadow-2xl rounded-lg">
-                        <img src="../assets/Image_3_Home.png" class="mb-1" />
-                        <p class="font-mono text-center text-xs p-2">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Phasellus nunc arcu, venenatis eu sem eu,
-                            finibus tempus risus. Pellentesque at dui est.
-                            Aenean eu nunc rutrum, interdum dolor ut, fringilla
-                            ante. Sed cursus consequat urna, quis malesuada urna
-                            suscipit at.
-                        </p>
-                    </div>
+                <div class="bg-white w-80 border-1 shadow-2xl rounded-lg">
+                    <img
+                        src="../assets/Image_3_Home.png"
+                        class="mb-1 rounded-lg"
+                    />
+                    <p class="font-mono text-center text-xs p-2 m-2">
+                        Bar-rat-thon est en partenariat avec les différents bar
+                        d’Amiens, permettant de mettre ainsi à jour les cartes
+                        des bars, leurs divers heures d’ouverture et bien plus
+                        encore.
+                    </p>
                 </div>
             </div>
         </div>
@@ -93,3 +86,12 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+.bottom-175 {
+    bottom: 75px;
+}
+.background-carte {
+    background-image: url("../assets/Map.png");
+}
+</style>

@@ -20,7 +20,7 @@ export default {
             if (e.to == "App") {
                 this.info = {
                     budget: e.budget,
-                    typeBoisson: e.typeBoisson,
+                    type_boisson: e.typeBoisson,
                 };
                 this.index = AppIndex;
             }

@@ -59,7 +59,7 @@ async function PushBars() {
             adresse: "12 rue Bondes, 80000 Amiens",
             coordN: 49.89575797845227,
             coordE: 2.303820381019288,
-            img: "img",
+            img: "retro.jpg",
         })
     );
     arrayBars.push(
@@ -105,7 +105,7 @@ async function PushBars() {
             adresse: "76 Rue St Leu, 80000 Amiens",
             coordN: 49.90011272989459,
             coordE: 2.3007677460390306,
-            img: "img",
+            img: "delirium.jpg",
         })
     );
     arrayBars.push(
@@ -151,7 +151,7 @@ async function PushBars() {
             adresse: "21 Rue Edmond Fontaine, 80000 Amiens",
             coordN: 49.899856574206595,
             coordE: 2.3008539000000003,
-            img: "img",
+            img: "934.jpg",
         })
     );
     arrayBars.push(
@@ -197,7 +197,7 @@ async function PushBars() {
             adresse: "15 Rue Edmond Fontaine, 80000 Amiens",
             coordN: 49.90010587534423,
             coordE: 2.3009570074207324,
-            img: "img",
+            img: "Mygodness.jpg",
         })
     );
     arrayBars.push(
@@ -243,7 +243,7 @@ async function PushBars() {
             adresse: "2 Rue des Bondes, 80000 Amiens",
             coordN: 49.896037013596086,
             coordE: 2.3035924,
-            img: "img",
+            img: "baobar.jpg",
         })
     );
     arrayBars.push(
@@ -289,7 +289,7 @@ async function PushBars() {
             adresse: "54 Rue St Leu, 80000 Amiens",
             coordN: 49.898408131628926,
             coordE: 2.300915525123708,
-            img: "img",
+            img: "elektrik.jpg",
         })
     );
     arrayBars.push(
@@ -335,7 +335,7 @@ async function PushBars() {
             adresse: "1 Pl. du Don, 80000 Amiens",
             coordN: 49.89585643524044,
             coordE: 2.303339027888188,
-            img: "img",
+            img: "adhoc.jpg",
         })
     );
 

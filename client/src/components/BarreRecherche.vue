@@ -1,15 +1,25 @@
 <template>
     <div form="relative" class="flex flex-row" ref="racine">
-        <vue-select
-            placeholder="Boisson ..."
-            :custom-label="selectDisplay"
-            :options="allTypeBoisson"
+        <select
+            class="w-80 indent-4 border rounded-l-lg"
             v-if="dataReady"
-        ></vue-select>
+            placeholder="Boisson ..."
+            v-model="typeBoisson"
+        >
+            <option
+                v-for="(tb, index) in allTypeBoisson"
+                :value="tb.code"
+                :key="index"
+            >
+                {{ tb.label }}
+            </option>
+        </select>
+        <div class="w-80 border pr-8 animate-pulse bg-white" v-else></div>
         <input
             type="number"
-            class="w-96 pr-8 pl-5 border focus:shadow focus:outline-none"
-            placeholder="Budget.."
+            class="w-80 pr-8 pl-5 border focus:shadow focus:outline-none"
+            placeholder="Budget ..."
+            v-model="budget"
         />
         <button
             class="border rounded-r-lg bg-[#FCD34D]"
@@ -22,19 +32,15 @@
 </template>
 
 <script>
-import vSelect from "vue-multiselect";
 import axios from "axios";
 import GetBaseApiUrl from "../library/GetBaseApiUrl";
-//import "../../node_modules/vue-select/dist/vue-select.css";
 
 export default {
-    components: {
-        "vue-select": vSelect,
-    },
+    components: {},
     data() {
         return {
             budget: null,
-            typeBoisson: {},
+            typeBoisson: 1,
             dataReady: false,
             allTypeBoisson: [],
         };
@@ -42,10 +48,12 @@ export default {
     methods: {
         GetTypeBoisson() {},
         OnSearch() {
-            this.$emit("search", {
+            let i = {
                 budget: this.budget,
                 typeBoisson: this.typeBoisson,
-            });
+            };
+
+            this.$emit("search", i);
         },
         selectDisplay({ label }) {
             return label;
@@ -53,22 +61,21 @@ export default {
     },
     mounted() {
         let baseURL = GetBaseApiUrl();
-        console.log(baseURL);
 
         axios
             .get("/boissons/type_boissons", { baseURL: baseURL })
             .then((response) => {
                 if (response) {
                     for (var tb of response.data) {
-                        this.allTypeBoisson.push({
+                        let type = {
                             label: tb.nom,
                             code: tb.id,
-                        });
+                        };
+
+                        this.allTypeBoisson.push(type);
                     }
 
-                    console.log(this.allTypeBoisson);
                     this.dataReady = true;
-                    this.$refs.racine.classList.remove("animate-pulse");
                 }
             })
             .catch((e) => {
